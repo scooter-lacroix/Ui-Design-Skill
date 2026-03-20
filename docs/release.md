@@ -20,6 +20,7 @@
 - [ ] Run full installer: `bash install.sh`
 - [ ] Run status check: `bash scripts/status.sh`
 - [ ] Validate Claude plugin manifests: `claude plugin validate .`
+- [ ] Smoke test marketplace install in a clean temp directory with `claude plugin marketplace add --scope local`, `claude plugin install`, and `claude plugin list`
 - [ ] Confirm the public GitHub repository contains the release commit before publishing npm metadata that points to it
 
 ## Release Steps

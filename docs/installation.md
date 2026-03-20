@@ -35,6 +35,8 @@ The installer:
 
 ## Method 2: npm
 
+The npm package currently supports macOS and Linux. Windows users should use WSL or run the shell installer from a Unix-compatible environment.
+
 ### Global install
 
 ```bash

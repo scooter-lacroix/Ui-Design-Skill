@@ -28,6 +28,10 @@ Yes. The installer only installs to detected platforms. If you only have Claude 
 
 The shell installer does not. The npm package and CLI require Node.js 18+.
 
+### Does the npm package support Windows?
+
+Not yet. The packaged CLI targets macOS and Linux because install, uninstall, and status still rely on Bash scripts. On Windows, use WSL or run the shell installer from a Unix-compatible shell.
+
 ### Can I embed it in my project?
 
 Yes. Run `npx ui-architect-skill init ./my-project` to create a `.ui-architect/` directory in your project. The agent resolves styles from there first.
@@ -84,6 +88,8 @@ Yes:
 ```bash
 bash scripts/qa-lint.sh <target-path> [--style <style-name>]
 ```
+
+The optional `--style` flag validates that the named style exists and records style context in the report header. The 9 lint checks themselves remain generic in `v1.0.0`.
 
 ## Styles
 

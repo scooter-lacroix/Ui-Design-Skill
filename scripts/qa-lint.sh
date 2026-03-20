@@ -7,6 +7,8 @@
 set -euo pipefail
 
 # ── Defaults ──────────────────────────────────────────────────────
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 TARGET=""
 STYLE="generic"
 PASS_COUNT=0
@@ -27,7 +29,7 @@ usage() {
   echo "Usage: $(basename "$0") <target-path> [--style <style-name>]"
   echo ""
   echo "  target-path    File or directory to lint"
-  echo "  --style NAME   Style name to check against (default: generic)"
+  echo "  --style NAME   Optional style context label; validates the style exists"
   exit 2
 }
 
@@ -48,6 +50,33 @@ done
 
 [[ -z "$TARGET" ]] && { echo "Error: target path required"; usage; }
 [[ ! -e "$TARGET" ]] && { echo "Error: target '$TARGET' does not exist"; exit 2; }
+
+resolve_style_file() {
+  local candidate="$1"
+  local search_paths=(
+    "$REPO_ROOT/styles/${candidate}.md"
+    "$REPO_ROOT/styles/${candidate}"
+    "$HOME/.ui-architect/styles/${candidate}.md"
+    "$HOME/.ui-architect/styles/${candidate}"
+  )
+
+  local path
+  for path in "${search_paths[@]}"; do
+    if [[ -f "$path" ]]; then
+      echo "$path"
+      return 0
+    fi
+  done
+  return 1
+}
+
+STYLE_FILE=""
+if [[ "$STYLE" != "generic" ]]; then
+  if ! STYLE_FILE="$(resolve_style_file "$STYLE")"; then
+    echo "Error: style '$STYLE' was not found in bundled or global style libraries" >&2
+    exit 2
+  fi
+fi
 
 # ── Search tool selection ─────────────────────────────────────────
 if command -v rg &>/dev/null; then
@@ -151,7 +180,12 @@ echo ""
 echo "🔍 UI Architect — Automated QA Lint"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "Target: $TARGET"
-echo "Style:  $STYLE"
+if [[ "$STYLE" == "generic" ]]; then
+  echo "Style context: generic"
+else
+  echo "Style context: $STYLE"
+  echo "Style file:    $STYLE_FILE"
+fi
 echo ""
 
 # ══════════════════════════════════════════════════════════════════

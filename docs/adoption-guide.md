@@ -65,13 +65,15 @@ Custom styles are resolved before the bundled library, so they take precedence.
 
 ## CI Integration
 
-### Lint Builds Against a Style
+### Lint Builds With Style Context
 
-Use the QA lint script in CI to validate that builds adhere to style tokens:
+Use the QA lint script in CI to run the generic 9 QA checks and record the intended style context:
 
 ```bash
 bash scripts/qa-lint.sh src/ --style modern_dark_design
 ```
+
+The `--style` flag validates that the named bundled style exists. The automated checks remain style-agnostic in `v1.0.0`.
 
 The script exits 0 on pass, 1 on failure. It checks:
 - Hardcoded colors, font sizes, border radius consistency

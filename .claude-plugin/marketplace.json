@@ -13,8 +13,8 @@
       "version": "1.0.0",
       "description": "Design system orchestrator with 31 visual design styles, Flow governance, blocking task lists, and 25-point QA for AI coding agents",
       "source": {
-        "source": "github",
-        "repo": "scooter-lacroix/Ui-Design-Skill"
+        "source": "url",
+        "url": "https://github.com/scooter-lacroix/Ui-Design-Skill.git"
       }
     }
   ]

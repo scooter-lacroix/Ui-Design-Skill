@@ -2,6 +2,8 @@
 
 UI Architect is distributed as an npm package (`ui-architect-skill`). It has zero runtime dependencies.
 
+The published package targets macOS and Linux. On Windows, use WSL or clone the repository and run the shell installer from a Unix-compatible shell.
+
 ## Installation
 
 ### Global install
@@ -31,6 +33,7 @@ npx ui-architect-skill <command>
 ## Requirements
 
 - Node.js 18+
+- macOS or Linux for the packaged CLI and installer
 - npm 9+ for `npm add` shorthand, or use `npm install --save-dev`
 
 ## CLI Reference

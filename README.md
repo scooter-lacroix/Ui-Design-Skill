@@ -42,6 +42,8 @@ The installer auto-detects which platforms you have and installs only to those.
 
 ### npm
 
+The npm package currently supports macOS and Linux. For Windows environments, use WSL or run the shell installer from a Unix-compatible shell.
+
 ```bash
 npx ui-architect-skill install
 ```

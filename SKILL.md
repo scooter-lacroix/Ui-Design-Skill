@@ -313,6 +313,8 @@ Run the automated lint script against the build output:
 bash scripts/qa-lint.sh <build-output-path> [--style <style-name>]
 ```
 
+The optional `--style` argument validates the named style exists and records the intended style context in the report. The automated checks remain generic in `v1.0.0`.
+
 The lint script performs 9 automated checks across TOKEN ADHERENCE, ACCESSIBILITY, and COMPLETENESS:
 - Hardcoded colors, font sizes, border radius consistency
 - Reduced motion, icon button labels, semantic HTML (WARN), missing focus states
