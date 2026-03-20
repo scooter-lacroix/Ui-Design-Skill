@@ -1,0 +1,14 @@
+{
+  "name": "ui-architect",
+  "version": "1.0.0",
+  "description": "Design system orchestrator that selects and applies visual design styles to UI builds. Analyzes prompts to choose the best design language, loads style specs, enforces Flow coherence, builds via a blocking task list, and runs QA with targeted remediation.",
+  "author": {
+    "name": "scooter-lacroix",
+    "url": "https://github.com/scooter-lacroix"
+  },
+  "homepage": "https://github.com/scooter-lacroix/Ui-Design-Skill#readme",
+  "repository": "https://github.com/scooter-lacroix/Ui-Design-Skill",
+  "license": "MIT",
+  "keywords": ["ui", "design-system", "claude-code", "plugin", "agent-skill"],
+  "skills": "./skills/"
+}

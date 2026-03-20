@@ -1,0 +1,21 @@
+{
+  "name": "scooter-lacroix",
+  "owner": {
+    "name": "scooter-lacroix",
+    "url": "https://github.com/scooter-lacroix"
+  },
+  "metadata": {
+    "description": "Public marketplace entry for the UI Architect Claude Code plugin"
+  },
+  "plugins": [
+    {
+      "name": "ui-architect",
+      "version": "1.0.0",
+      "description": "Design system orchestrator with 31 visual design styles, Flow governance, blocking task lists, and 25-point QA for AI coding agents",
+      "source": {
+        "source": "github",
+        "repo": "scooter-lacroix/Ui-Design-Skill"
+      }
+    }
+  ]
+}
