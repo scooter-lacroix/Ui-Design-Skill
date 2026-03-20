@@ -4,7 +4,7 @@
   "description": "Design system orchestrator for AI coding agents — 31 style specs, Flow system, blocking task lists, and automated QA",
   "type": "module",
   "bin": {
-    "ui-architect-skill": "./bin/ui-architect-skill.mjs"
+    "ui-architect-skill": "bin/ui-architect-skill.mjs"
   },
   "files": [
     "SKILL.md",
